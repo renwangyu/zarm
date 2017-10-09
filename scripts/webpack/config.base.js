@@ -54,6 +54,36 @@ module.exports = {
         ],
       },
       {
+        test: /\.(ts|tsx)$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: [
+                [
+                  'env',
+                  {
+                    targets: {
+                      browsers: BROWSERS,
+                    },
+                  },
+                ],
+                'react',
+                'stage-0',
+              ],
+              plugins: [
+                'transform-runtime',
+                'add-module-exports',
+              ],
+            },
+          },
+          {
+            loader: 'awesome-typescript-loader',
+          },
+        ],
+      },
+      {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
           use: [
@@ -122,7 +152,7 @@ module.exports = {
   },
 
   resolve: {
-    extensions: [' ', '.js', '.jsx', '.scss'],
+    extensions: [' ', '.js', '.jsx', '.ts', '.tsx', '.scss'],
   },
 
   plugins: [],

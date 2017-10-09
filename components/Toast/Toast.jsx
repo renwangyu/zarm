@@ -77,7 +77,7 @@ Toast.propTypes = {
   className: PropTypes.string,
   visible: PropTypes.bool,
   duration: PropTypes.number, // eslint-disable-line
-  onMaskClick: Mask.propTypes.onClose,
+  // onMaskClick: Mask.propTypes.onClose,
 };
 
 Toast.defaultProps = {

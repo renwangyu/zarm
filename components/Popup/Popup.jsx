@@ -74,7 +74,7 @@ class Popup extends PureComponent {
       this.setState({
         isMaskShow: false,
       });
-      onClose();
+      typeof onClose === 'function' && onClose();
     }
   }
 
@@ -127,10 +127,10 @@ Popup.propTypes = {
   direction: PropTypes.oneOf(['top', 'right', 'bottom', 'left']),
   duration: PropTypes.number, // eslint-disable-line
   autoClose: PropTypes.bool,  // eslint-disable-line
-  onClose: PropTypes.func,
-  maskType: Mask.propTypes.type,
   animationDuration: PropTypes.number,
-  onMaskClick: Mask.propTypes.onClose,
+  onClose: PropTypes.func,
+  // maskType: Mask.propTypes.type,
+  // onMaskClick: Mask.propTypes.onClose,
 };
 
 Popup.defaultProps = {
