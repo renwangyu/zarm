@@ -2,12 +2,12 @@ import React, { PureComponent } from 'react';
 import classnames from 'classnames';
 import { MaskProps as BasePropsType } from './PropsType';
 
-export interface MaskProps extends BasePropsType {
+export interface propTypes extends BasePropsType {
   prefixCls?: string;
   className?: string;
 }
 
-class Mask extends PureComponent<MaskProps, any> {
+class Mask extends PureComponent<propTypes, any> {
   static defaultProps = {
     prefixCls: 'za-mask',
     visible: false,
